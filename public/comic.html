@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XKCD</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/com.css">
+</head>
+<body ng-app="comic" ng-controller="MainCtrl">
+
+<h1 id="title"></h1>
+<img id="image"></img>
+
+<div>
+<button type="submit" ng-click="addComic()">Add to Favorites</button>
+<button type="submit" ng-click="newComic()">New Comic</button>
+</div>
+<h1>Favorites</h1>
+<div ng-repeat="comic in favorites">
+<img ng-src="{{comic.img}}"></img>
+<h4>{{comic.title}}</h4>
+</div>
+
+</body>
+</html>
+
